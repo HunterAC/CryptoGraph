@@ -1,7 +1,6 @@
 import os.path
 from app import app
 from flask import request, json, jsonify
-from app.scripts import script
 
 
 @app.route('/')
@@ -11,6 +10,6 @@ def index():
 
 @app.route('/bitcoin')
 def bitcoin():
-    filepath = os.path.join("data/percentages.json")
+    filepath = os.path.join("data/bitcoin.json")
     data = json.load(open(filepath))
     return jsonify(data)
